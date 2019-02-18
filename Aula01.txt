@@ -1,0 +1,66 @@
+Client side -> carrega no navegador arquivos estaticos armazenados nos servidor web
+    --> recebe e executa os arq.
+-> web server (atende requisições web http / hospeda)
+    --> recebe request
+    --> Apache, ngix, tomcat, glassfish
+    --> todos servidores web atendem e mandam para o backend
+    --> envia response
+-> backend (python, node..)
+-> database
+
+
+---------------------------------------------------------- HTML
+-> Estrutura 
+-> tags(elementos)
+-> semantica ainformação/ acessibilidade
+-> nome da tag e TAB 
+    -->  ul>li*6 + TAB
+    --> ul#lista>li.item{item $}*6 +TAB
+
+<svg> vetores
+----------------------------------------------------------- CSS
+-> Estilo / animaçoes 
+-> busca por class, tag, id (seletores)
+    --> tag -- h1{
+
+    }
+    --> id -- #titulo{
+
+    }
+    --> class -- .titulo{
+
+    }
+
+
+
+----------------------------------------------------------- JAVASCRIPT
+ -> logica
+
+1- Localizar elemento que sofrerá a ação
+2- Gatilho para execução(Evento) - click, digitar...
+3- Lógica (function) funcionalidade
+
+onclick="console.log(this.remove())" -- apaga o elemento
+this.parentElement --> pega o elemento pai
+
+
+Objeto - reperesentçaõ do mundo real
+
+DOM - Document Object Model (meio campo entre js e HTML)
+    --> feito pelo navegador
+    --> Todos elementos html são intepretados como objetos
+
+document. --> para o js é o html
+
+---- Seletores css pelo js
+document.querySelector('tag')
+document.querySelector('#id')
+document.querySelector('.Nomeclass')
+
+---- É carregado quando carrega o html e em eventos
+
+---- pegar valor de class
+let orientacao = document.querySelector('.mural');
+orientacao.classList --> traz a lista de nomes de classes
+
+innerText ---> mostra apenas o texto
