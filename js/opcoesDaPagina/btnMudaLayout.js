@@ -17,6 +17,8 @@ button.addEventListener('click', mudaLayout)
 button.addEventListener('click',mudaText)
 
 button.classList.remove('no-js')
+
+
 /* function main(){
     //let newButton = 
     mudaLayout(button.textContent)

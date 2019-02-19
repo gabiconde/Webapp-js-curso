@@ -61,6 +61,57 @@ document.querySelector('.Nomeclass')
 
 ---- pegar valor de class
 let orientacao = document.querySelector('.mural');
-orientacao.classList --> traz a lista de nomes de classes
+        --> querySelector busca o primeiro que possui o seletor
+        --> utilizar querySelectorAll retorna uma lista de todos que possuem
+        --> acessar com for
 
-innerText ---> mostra apenas o texto
+
+orientacao.classList 
+        --> traz a lista de nomes de classes
+        --> classList.add or .toggle etc.. alterar esse array de class
+
+innerText 
+        --> mostra apenas o texto
+
+onclick="this.parentElement.parentElement.remove()"
+        --> dentro do html 
+        --> parentElement acessa o elemento pai do <button> por exemplo
+
+css:
+
+.opcoesDoCartao-opcao{
+    pointer-events: none;
+	opacity: 0;
+	transition: opacity .3s;
+}
+        --> retira os eventos do javascript
+
+
+.cartao--focado .opcoesDoCartao-opcao,
+.cartao:hover .opcoesDoCartao-opcao{
+	pointer-events: auto;
+	opacity: 1;
+
+}
+        --> é criada a classe (.cartao--focado e .cartao:hover quando tocado)
+        --> Esse quando utilizados alteram a classe .opcoesDoCartao-opcao
+
+js:
+
+cartao.addEventListener('change', function(event){
+    const elementoCor = event.target
+    const radio =  elementoCor.classList.contains('opcoesDoCartao-radioTipo')
+    if (radio){
+        cartao.style.backgroundColor = elementoCor.value
+    }
+
+})
+
+        --> change é o evento disparado quando algum input é alterado
+        --> acessando o evento vemos quem o emitiu (event.target) -- com bubble ele chega ate o article
+        --> event.target.value  value do html
+        --> cartao.style.backgroundColor = event.target.value  
+            --> atribui ao html um style.
+        --> const radio =  elementoCor.classList.contains('opcoesDoCartao-radioTipo')
+            --> valida se é o input que queremos pela classe
+        

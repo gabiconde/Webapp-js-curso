@@ -8,9 +8,24 @@ function remover(){
 //IIFE 
 // Immediately Invoked Function Expression
 ;(function(){
-    const cartao = document.querySelector('.opcoesDoCartao-remove')
-    console.log('troca o btn')
+    const botao = document.querySelectorAll('.opcoesDoCartao-remove')
+
+    botao.forEach(element => {
+            console.log(element)
+            
+            element.addEventListener('click', function(){
+        
+                const cartao = element.parentElement.parentElement;
+                cartao.classList.add('cartao--some')
+                /*         setTimeout(function(){
+                            cartao.remove()
+                        },500) */
+                cartao.addEventListener('transitionend',this.remove)
+            })
+        
+    })
+
+
 })()
 
-//cartao.addEventListener('click', remover)
 // clicar adc class botao--some e dps remover botao
