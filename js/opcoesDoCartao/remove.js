@@ -11,7 +11,6 @@ function remover(){
     const botao = document.querySelectorAll('.opcoesDoCartao-remove')
 
     botao.forEach(element => {
-            console.log(element)
             
             element.addEventListener('click', function(){
         

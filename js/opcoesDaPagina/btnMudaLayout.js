@@ -3,7 +3,6 @@ const button = document.querySelector('#btnMudaLayout');
 const orientacao = document.querySelector('.mural');
 
 function mudaText(){
-    console.log(button.textContent)
     button.textContent.trim() == 'Linhas' ? button.textContent = 'Blocos' : button.textContent ='Linhas'
 }
 //button.onclick = mudaText;
