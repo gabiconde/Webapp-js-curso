@@ -22,5 +22,15 @@
             }
 
         })
+
+        cartao.addEventListener('keyup', function(event){
+            console.log(event)
+            const label = event.target
+            if (label.classList.contains('opcoesDoCartao-tipo') && (event.code == 'Space' || event.code == 'Enter')){
+                cartao.style.backgroundColor = label.style.color
+            }
+
+
+        })
     })
 })()
