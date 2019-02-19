@@ -1,22 +1,22 @@
-//Localiza elemento
-const button = document.querySelector('#btnMudaLayout');
-const orientacao = document.querySelector('.mural');
+;(function(){
+    //Localiza elemento
+    const button = document.querySelector('#btnMudaLayout');
+    const orientacao = document.querySelector('.mural');
+    button.classList.remove('no-js')
 
-function mudaText(){
-    button.textContent.trim() == 'Linhas' ? button.textContent = 'Blocos' : button.textContent ='Linhas'
-}
-//button.onclick = mudaText;
+    button.addEventListener('click', ()=>{
+        orientacao.classList.toggle('mural--linha')
+    })
+    ;
+    button.addEventListener('click',() => {
+        button.textContent.trim() == 'Linhas' ? button.textContent = 'Blocos' : button.textContent ='Linhas'
+    })
+
+})()
 
 
-function mudaLayout(){
-    orientacao.classList.toggle('mural--linha')
-}
-
-button.addEventListener('click', mudaLayout)
-button.addEventListener('click',mudaText)
-
-button.classList.remove('no-js')
-
+//function mudaText(){}
+//button.onclick = mudaText
 
 /* function main(){
     //let newButton = 
