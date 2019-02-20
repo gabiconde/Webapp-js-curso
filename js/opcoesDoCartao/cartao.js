@@ -1,18 +1,23 @@
-const cartoes = document.querySelectorAll('.cartao')
-let contador = cartoes.length;
+; (function () {
 
-function criaCartao(text){
-
-            contador++
-
-            const cartao = document.createElement('article')
-            cartao.classList.add('cartao')
-            cartao.tabIndex = 0
-            cartao.id = `cartao_${contador}` 
-            //cartao.textContent = textarea.value
+    'use strict';
 
 
-            cartao.innerHTML = 
+    const cartoes = document.querySelectorAll('.cartao')
+    let contador = cartoes.length;
+
+    window.criaCartao =  function (objetoCartao) {
+
+        contador++
+
+        const cartao = document.createElement('article')
+        cartao.classList.add('cartao')
+        cartao.tabIndex = 0
+        cartao.id = `cartao_${contador}`
+        //cartao.textContent = textarea.value
+        cartao.style.backgroundColor = objetoCartao.cor
+
+        cartao.innerHTML =
             `
             <div class="opcoesDoCartao">
             <button  class="opcoesDoCartao-remove opcoesDoCartao-opcao" tabindex="0">
@@ -39,45 +44,47 @@ function criaCartao(text){
                 Inspiração
             </label>
             </div>
-            <p class="cartao-conteudo" contenteditable tabindex="0">${text}</p>
+            <p class="cartao-conteudo" contenteditable tabindex="0">${objetoCartao.conteudo}</p>
             `
-            cartao.addEventListener('focusin', function (event) {
-                //callback
-                this.classList.add('cartao--focado')
-            })
-            cartao.addEventListener('focusout', function (event) {
-                //callback
-                this.classList.remove('cartao--focado')
+        cartao.addEventListener('focusin', function (event) {
+            //callback
+            this.classList.add('cartao--focado')
+        })
+        cartao.addEventListener('focusout', function (event) {
+            //callback
+            this.classList.remove('cartao--focado')
 
-            })
-            cartao.addEventListener('change', function (event) {
-                const input = event.target
-                const radio = input.classList.contains('opcoesDoCartao-radioTipo')
-                if (radio) {
-                    cartao.style.backgroundColor = input.value
-                }
+        })
+        cartao.addEventListener('change', function (event) {
+            const input = event.target
+            const radio = input.classList.contains('opcoesDoCartao-radioTipo')
+            if (radio) {
+                cartao.style.backgroundColor = input.value
+            }
 
-            })
-            cartao.addEventListener('keyup', function (event) {
-                const label = event.target
-                if (label.classList.contains('opcoesDoCartao-tipo') && (event.code == 'Space' || event.code == 'Enter')) {
-                    cartao.style.backgroundColor = label.style.color
-                    //event.target.click()
-                }
-            })
-            cartao.addEventListener('click', function (event) {
+        })
+        cartao.addEventListener('keyup', function (event) {
+            const label = event.target
+            if (label.classList.contains('opcoesDoCartao-tipo') && (event.code == 'Space' || event.code == 'Enter')) {
+                cartao.style.backgroundColor = label.style.color
+                //event.target.click()
+            }
+        })
+        cartao.addEventListener('click', function (event) {
 
-                if (event.target.classList.contains('opcoesDoCartao-remove')) {
-                    cartao.classList.add('cartao--some')
-                    cartao.addEventListener('transitionend', this.remove)
-                }
-            })
+            if (event.target.classList.contains('opcoesDoCartao-remove')) {
+                cartao.classList.add('cartao--some')
+                cartao.addEventListener('transitionend', this.remove)
+            }
+        })
 
-            const mural = document.querySelector('.mural')
-            mural.insertAdjacentElement('beforeend', cartao)
-            return cartao;
+        const mural = document.querySelector('.mural')
+        mural.insertAdjacentElement('beforeend', cartao)
+        return cartao;
 
-}
+    }
+})()
+
 
 
 /* //iife
@@ -114,9 +121,9 @@ function criaCartao(text){
         })
 
         cartao.addEventListener('click', function(event){
-            
+
             if (event.target.classList.contains('opcoesDoCartao-remove')){
-                cartao.classList.add('cartao--some')    
+                cartao.classList.add('cartao--some')
                 cartao.addEventListener('transitionend', this.remove)
             }
         })

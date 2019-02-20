@@ -20,15 +20,15 @@
             console.log(msg)
             //textarea.placeholder = 'Preencha algo'
         } else {
-            const cartao = criaCartao(textarea.value)
+            const objeto = {
+                conteudo: textarea.value
+            }
+            const cartao = criaCartao(objeto)
+
             form.reset();
             cartao.focus();
-
-
 
         }
 
     })
-
-
 })()
