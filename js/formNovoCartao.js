@@ -7,16 +7,26 @@
         const textarea = form.querySelector('textarea')
         const value = textarea.value.trim()
         const isTextareaVazio = value == '';
-
+        console.log(isTextareaVazio)
         if(isTextareaVazio){
-            alert('Preencha algo')
-            let msg = document.createElement("p")
+            //alert('Preencha algo')
+            const msg = document.createElement('p')
             msg.classList.add("formNovoCartao-msg")
             msg.textContent = "Form inválido"
-
+            textarea.insertAdjacentElement('afterend',msg)
+            msg.addEventListener('animationend',function(event){
+                this.remove()
+            })
+            console.log(msg)
             //textarea.placeholder = 'Preencha algo'
         }else{
-            console.log(value)
+        
+            const cartaoEl = document.createElement('article')
+            cartaoEl.classList.add('cartao')
+            cartaoEl.textContent = textarea.value
+            const mural = document.querySelector('.mural')
+            mural.insertAdjacentElement('beforeend',cartaoEl)
+
         }
 
     })
