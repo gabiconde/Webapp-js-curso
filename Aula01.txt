@@ -114,4 +114,8 @@ cartao.addEventListener('change', function(event){
             --> atribui ao html um style.
         --> const radio =  elementoCor.classList.contains('opcoesDoCartao-radioTipo')
             --> valida se é o input que queremos pela classe
-        
+
+insertAdjacentelement
+'beforeBegin', 'afterBegin', 'beforeEnd', or 'afterEnd'.  
+
+innerHTML com `` 
