@@ -1,4 +1,5 @@
 ;(function(){
+    'use strict';
     //Localiza elemento
     const button = document.querySelector('#btnMudaLayout');
     const orientacao = document.querySelector('.mural');

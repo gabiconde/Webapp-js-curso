@@ -119,3 +119,6 @@ insertAdjacentelement
 'beforeBegin', 'afterBegin', 'beforeEnd', or 'afterEnd'.  
 
 innerHTML com `` 
+
+Para fazer a tradução e criar arq de prod
+./node_modules/.bin/babel src --out-dir dist --copy-files --watch --preset @babel/preset-env
