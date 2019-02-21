@@ -1,4 +1,5 @@
 ;(function () {
+    'use strict'
     const form = document.querySelector('.formNovoCartao')
     form.classList.remove('no-js')
 
@@ -7,7 +8,6 @@
         const textarea = form.querySelector('textarea')
         const value = textarea.value.trim()
         const isTextareaVazio = value == '';
-        console.log(isTextareaVazio)
         if (isTextareaVazio) {
             //alert('Preencha algo')
             const msg = document.createElement('p')
@@ -17,11 +17,11 @@
             msg.addEventListener('animationend', function (event) {
                 this.remove()
             })
-            console.log(msg)
             //textarea.placeholder = 'Preencha algo'
         } else {
             const objeto = {
-                conteudo: textarea.value
+                conteudo: textarea.value,
+                cor: 'yellow'
             }
             const cartao = criaCartao(objeto)
 

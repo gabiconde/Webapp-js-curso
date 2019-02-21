@@ -1,4 +1,5 @@
 ;(function(){
+    'use strict'
     const button = document.querySelector('#btnAjuda')
     button.classList.remove('no-js')
 
@@ -12,7 +13,6 @@
         req.addEventListener('load', function(){
             //const data = JSON.parse(req.response).instrucoes
             const data = req.response.instrucoes 
-            console.log(data)
             let cartoes = []
 
             for(const ajuda of data){
@@ -40,7 +40,8 @@
         },
         {
             conteudo : 'Ajuda4',
-            cor: 'purple'
+            cor: 'pur            let conteudo = 
+            let cor = ple'
         }] */
 
         /* lista.forEach((help)=>{
@@ -49,4 +50,7 @@
 
 
     })
+
+
+
 })()
