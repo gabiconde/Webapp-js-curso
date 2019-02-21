@@ -121,4 +121,11 @@ insertAdjacentelement
 innerHTML com `` 
 
 Para fazer a tradução e criar arq de prod
-./node_modules/.bin/babel src --out-dir dist --copy-files --watch --preset @babel/preset-env
+./node_modules/.bin/babel src --out-dir dist --copy-files --watch --presets @babel/preset-env
+
+AJAX
+
+assincronous javascript and xml
+--> não acontece na ordem
+--> acontece em tempos diferentes
+

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "./node_modules/.bin/babel src --out-dir dist --copy-files --watch --preset @babel/preset-env"
+    "dev": "./node_modules/.bin/babel src --out-dir dist --copy-files --watch --presets @babel/preset-env"
   },
   "repository": {
     "type": "git",
